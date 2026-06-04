@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NETIX | معماری شبکه آینده</title>
+    <link rel="stylesheet" href="{% static 'style/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <canvas id="networkCanvas"></canvas>
+
+    <div class="floating-icon">
+        <i class="fas fa-globe"></i>
+    </div>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">NETIX</a>
+            <div class="nav-menu">
+                <a href="#home">خانه</a>
+                <a href="#about">درباره</a>
+                <a href="#services">خدمات</a>
+                <a href="#projects">پروژه‌ها</a>
+                <a href="#contact">تماس</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>معماری <span>شبکه</span><br>برای نسل آینده</h1>
+                <p>راهکارهای امن، مقیاس‌پذیر و هوشمند برای کسب‌وکار شما</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">شروع پروژه <i class="fas fa-arrow-left"></i></a>
+                    <a href="#projects" class="btn btn-outline">نمونه کارها</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title"><span>درباره</span> ما</h2>
+                <div class="about-grid">
+                    <div>
+                        <p> NETIX، پیشرو در راهکارهای شبکه و امنیت</p>
+                        <p style="font-size:0.95rem; color:var(--text-dim);">پروژه های خود را به گروهی مجرب و متخصص بسپارید.</p>
+                        <div class="stats">
+                            <div class="stat-box">
+                                <div class="stat-number" data-target="56">0</div>
+                                <div>پروژه موفق</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" data-target="10">0</div>
+                                <div>مشتری فعال</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number" data-target="2">0</div>
+                                <div>سال تجربه</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); border-radius: 24px; padding: 2rem; text-align: center;">
+                        <i class="fas" style="font-size: 4rem; color: white;"><div style="width:96px; height:96px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="96" height="96"><defs></defs><g transform="translate(256, 256) rotate(0) scale(1, 1) scale(1) translate(-256, -256)"  ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve" fill="#ffffff" style="opacity: 1;"> <g id="computer_1_" fill="#ffffff"> <rect x="375.297" y="115.984" fill="#ffffff" width="128.672" height="281.328"></rect> <rect x="9.5" y="125" fill="#ffffff" width="319.5" height="169.344"></rect> <rect x="18.656" y="298" fill="#ffffff" width="307.344" height="44"></rect> <polygon fill="#ffffff" points="220.734,390.562 118.328,392.547 124.281,343.344 216.453,343.344 "></polygon> <g fill="#ffffff"> <path d="M320,106.656H21.344C9.562,106.656,0,116.219,0,128v202.656C0,342.438,9.562,352,21.344,352h100.547l-9.141,32h-6.078 C100.781,384,96,388.781,96,394.656c0,5.906,4.781,10.688,10.672,10.688h128c5.891,0,10.672-4.781,10.672-10.688 c0-5.875-4.781-10.656-10.672-10.656h-6.094l-9.141-32H320c11.781,0,21.344-9.562,21.344-21.344V128 C341.344,116.219,331.781,106.656,320,106.656z M134.938,384l9.109-31.922l53.219-0.016L206.391,384H134.938z M320,128v160H21.344 V128H320z M170.672,330.656H21.344v-21.312h149.328H320v21.312H170.672z" fill="#ffffff"></path> <path d="M181.344,320c0-5.891-4.781-10.656-10.672-10.656S160,314.109,160,320s4.781,10.656,10.672,10.656 S181.344,325.891,181.344,320z" fill="#ffffff"></path> <path d="M501.344,106.656h-128c-5.891,0-10.672,4.781-10.672,10.688v277.312c0,5.906,4.781,10.688,10.672,10.688h128 c5.891,0,10.656-4.781,10.656-10.688V117.344C512,111.438,507.234,106.656,501.344,106.656z M490.672,384H384V128h106.672V384z" fill="#ffffff"></path> <path d="M405.344,170.656h64c5.891,0,10.656-4.766,10.656-10.656s-4.766-10.656-10.656-10.656h-64 c-5.891,0-10.672,4.766-10.672,10.656S399.453,170.656,405.344,170.656z" fill="#ffffff"></path> <path d="M405.344,213.344h64c5.891,0,10.656-4.781,10.656-10.688c0-5.875-4.766-10.656-10.656-10.656h-64 c-5.891,0-10.672,4.781-10.672,10.656C394.672,208.562,399.453,213.344,405.344,213.344z" fill="#ffffff"></path> <path d="M405.344,256h64c5.891,0,10.656-4.781,10.656-10.656c0-5.906-4.766-10.688-10.656-10.688h-64 c-5.891,0-10.672,4.781-10.672,10.688C394.672,251.219,399.453,256,405.344,256z" fill="#ffffff"></path> <path d="M437.344,309.344c-5.891,0-10.672,4.766-10.672,10.656s4.781,10.656,10.672,10.656S448,325.891,448,320 S443.234,309.344,437.344,309.344z" fill="#ffffff"></path> </g> </g> </svg></g></svg></div></i>
+                        <p style="margin-top: 1rem; color: white; font-size:1rem;">راهکار های هوشمند و تخصصی</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title"><span>خدمات</span> تخصصی</h2>
+                <div class="services-grid">
+                    <div class="service-card"><i><div style="width:50px; height:50px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="40" height="40"><defs></defs><g transform="translate(16, 16) rotate(0) scale(1, 1) scale(1) translate(-16, -16)"  ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="Layer_1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" fill="currentColor" style="opacity: 1;"> <g fill="currentColor"> <path fill="currentColor" d="M28,2.986c0,0-5,0-10.5-2.5c-1.25-0.641-1.719-0.656-3,0C9,2.986,4,2.986,4,2.986c-1.104,0-2,0.896-2,2v7 c0,11,8,20,14,20s14-10,14-20v-7C30,3.882,29.104,2.986,28,2.986z"></path> <g opacity="0.15" fill="currentColor"> <path d="M16.003,2.005c0.063,0.019,0.224,0.076,0.585,0.262l0.042,0.021l0.043,0.02C22.5,4.956,27.778,4.986,28,4.986v7 c0,9.281-7.486,18-12,18c-4.738,0-12-8.064-12-18v-7c0.222,0,5.5-0.03,11.327-2.68l0.043-0.019l0.042-0.021 C15.777,2.079,15.94,2.022,16.003,2.005 M16.004,0c-0.431,0-0.867,0.16-1.504,0.486C9,2.986,4,2.986,4,2.986c-1.104,0-2,0.896-2,2 v7c0,11,8,20,14,20s14-10,14-20v-7c0-1.104-0.896-2-2-2c0,0-5,0-10.5-2.5C16.871,0.164,16.44,0,16.004,0L16.004,0z" fill="currentColor"></path> </g> <path fill="currentColor" d="M23.392,9.471c-0.767-0.766-2.207-0.566-2.973,0.199l-6.322,6.322l-2.773-2.773 c-0.766-0.766-2.008-0.766-2.774,0c-0.765,0.766-0.765,2.008,0,2.773l4.161,4.161c0.766,0.765,2.008,0.765,2.773,0l7.977-7.851 C24.225,11.537,24.156,10.236,23.392,9.471z"></path> <path opacity="0.15" d="M28,2.986c0,0-5,0-10.5-2.5C16.869,0.163,16.438,0,16,0.001v31.985c6,0,14-10,14-20v-7 C30,3.882,29.104,2.986,28,2.986z" fill="currentColor"></path> </g> <g fill="currentColor"> </g> <g fill="currentColor"> </g> <g fill="currentColor"> </g> <g fill="currentColor"> </g> <g fill="currentColor"> </g> <g fill="currentColor"> </g> </svg></g></svg></div></i>
+                        <h3>امنیت شبکه</h3>
+                        <p>فایروال، IDS/IPS، امنیت لایه هفتم</p>
+                    </div>
+                    <div class="service-card"><i><div style="width:50px; height:50px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="54" height="54"><defs></defs><g transform="translate(320, 256) rotate(0) scale(1, 1) scale(1) translate(-320, -256)"  ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="100%" height="100%" fill="currentColor" style="opacity: 1;"><path d="M407.906,319.913l-230.8-2.928a4.58,4.58,0,0,1-3.632-1.926,4.648,4.648,0,0,1-.494-4.147,6.143,6.143,0,0,1,5.361-4.076L411.281,303.9c27.631-1.26,57.546-23.574,68.022-50.784l13.286-34.542a7.944,7.944,0,0,0,.524-2.936,7.735,7.735,0,0,0-.164-1.631A151.91,151.91,0,0,0,201.257,198.4,68.12,68.12,0,0,0,94.2,269.59C41.924,271.106,0,313.728,0,366.12a96.054,96.054,0,0,0,1.029,13.958,4.508,4.508,0,0,0,4.445,3.871l426.1.051c.043,0,.08-.019.122-.02a5.606,5.606,0,0,0,5.271-4l3.273-11.265c3.9-13.4,2.448-25.8-4.1-34.9C430.124,325.423,420.09,320.487,407.906,319.913ZM513.856,221.1c-2.141,0-4.271.062-6.391.164a3.771,3.771,0,0,0-3.324,2.653l-9.077,31.193c-3.9,13.4-2.449,25.786,4.1,34.89,6.02,8.4,16.054,13.323,28.238,13.9l49.2,2.939a4.491,4.491,0,0,1,3.51,1.894,4.64,4.64,0,0,1,.514,4.169,6.153,6.153,0,0,1-5.351,4.075l-51.125,2.939c-27.754,1.27-57.669,23.574-68.145,50.784l-3.695,9.606a2.716,2.716,0,0,0,2.427,3.68c.046,0,.088.017.136.017h175.91a4.69,4.69,0,0,0,4.539-3.37,124.807,124.807,0,0,0,4.682-34C640,277.3,583.524,221.1,513.856,221.1Z" fill="currentColor"></path></svg></g></svg></div></i>
+                        <h3>مشاوره تحول دیجیتال</h3>
+                        <p>مشاوره برون سپاری کسب و کار ها به زیر ساخت بری</p>
+                    </div>
+                    <div class="service-card"><i><div style="width:50px; height:50px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="42" height="42"><defs></defs><g transform="translate(288, 256) rotate(0) scale(1, 1) scale(1) translate(-288, -256)"  ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="100%" height="100%" fill="currentColor" style="opacity: 1;"><path d="M517.5 168.6 139.2 2.266c-14.8-5.875-31.7 0-39.58 13.874L4.25 183.04C-.5 191.3-1.25 201 1.999 209.9a32.132 32.132 0 0 0 19.13 19.12l156.5 64.87-39.87 106.1H63.1c0-26.51-21.49-47.98-47.1-47.98C7.163 352 0 359.2 0 368v127.1c0 9.7 7.163 16.9 15.1 16.9 26.51 0 47.1-21.49 47.1-47.1h96.05c13.33 0 25.26-8.268 29.94-20.75l46.87-124.1 68.5 28.37c9.25 3.375 19.5 2.375 27.87-2.875l189.2-118.4C544.7 211.5 541.7 178.3 517.5 168.6zm48.4 105.2-35.37-15.5-138.4 86.5 119.5 52.51c8.5 3.75 18.46-.132 22.21-8.632l40.74-92.62c1.75-4.125 1.878-8.756.253-12.88-1.633-4.278-5.733-7.578-8.933-9.378z" fill="currentColor"></path></svg></g></svg></div></i>
+                        <h3>پیکربندی CCTV</h3>
+                        <p>نصب و کانفیگ دوربین های مداربسته</p>
+                    </div>
+                    <div class="service-card"><i><div style="width:50px; height:50px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40"><defs></defs><g transform="translate(12, 12) rotate(0) scale(1, 1) scale(1) translate(-12, -12)"  ><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="currentColor" style="opacity: 1;"><path fill="currentColor" d="M24 14a4.5 4.5 0 0 0-3-4.24V9A9 9 0 0 0 3 9v.76a4.5 4.5 0 0 0 0 8.48a1.54 1.54 0 0 0 1.37-.18A1.53 1.53 0 0 0 5 16.83V9a7 7 0 0 1 14 0v7.83a1.5 1.5 0 0 0 .5 1.1v.57c0 1.48-1.29 2-2.5 2h-1.78a2 2 0 1 0-1.72 3a2 2 0 0 0 1.72-1H17c2.65 0 4.5-1.64 4.5-4V18a4.5 4.5 0 0 0 2.5-4"></path><path fill="currentColor" d="M10.75 16.75a1.25 1.25 0 1 0 2.5 0a1.25 1.25 0 1 0-2.5 0M9.5 10.5a1.25 1.25 0 0 0 1.25-1.25a1.25 1.25 0 1 1 1.75 1.15a2.91 2.91 0 0 0-1.75 2.67v.56a1.25 1.25 0 1 0 2.5 0v-.56a.42.42 0 0 1 .25-.38a3.75 3.75 0 1 0-5.25-3.44A1.25 1.25 0 0 0 9.5 10.5"></path></svg></g></svg></div></i>
+                        <h3>پشتیبانی تخصصی</h3>
+                        <p>تیم مجرب آماده پاسخگویی</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title"><span>پروژه‌های</span> اخیر</h2>
+                <div class="projects-grid" id="projectsGrid"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-flex">
+                    <div>
+                        <h3>مشتاق همکاری هستیم</h3>
+                        <p style="color:var(--text-dim);">فرم را پر کنید، ما ظرف ۲۴ ساعت با شما تماس می‌گیریم.
+                        </p>
+                        <div style="margin-top: 2rem;">
+{#                            <p style="margin:0.8rem 0;"><i class="fas fa-map-marker-alt"#}
+{#                                    style="color: var(--accent-blue); width: 28px;"></i> تهران، خیابان ولیعصر</p>#}
+                            <p style="margin:0.8rem 0;"><i class="fas fa-phone"
+                                    style="color: var(--accent-blue); width: 28px;"></i> ۰۹۹۰۹۰۷۸۹۳۸</p>
+                            <p style="margin:0.8rem 0;"><i class="fas fa-phone"
+                                    style="color: var(--accent-blue); width: 28px;"></i> ۰۹۰۱۸۶۷۸۳۰۰</p>
+                            <p style="margin:0.8rem 0;"><i class="fas fa-envelope"
+                                    style="color: var(--accent-blue); width: 28px;"></i> <i></i>Cantact@netix.ir</p>
+                        </div>
+                    </div>
+                    <form method="post"  id="contactForm">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="ایمیل" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="شماره تماس" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="request_type">
+                                <option value="">نوع درخواست را انتخاب کنید</option>
+                                <option>مشاوره رایگان</option>
+                                <option>درخواست پروژه</option>
+                                <option>سایر موارد</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="3" placeholder="توضیحات درخواست شما..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">ارسال درخواست <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+
+                    <!-- نمایش پیغام‌های موفقیت یا خطا -->
+                    {% if messages %}
+                    <div style="margin-top: 1rem;">
+                        {% for message in messages %}
+                        <div
+                            style="padding: 0.8rem; border-radius: 8px; margin-bottom: 0.5rem;
+                        {% if message.tags == 'success' %}background-color: rgba(57, 255, 20, 0.2); color: #39FF14; border-right: 3px solid #39FF14;
+                        {% else %}background-color: rgba(255, 30, 30, 0.2); color: #ff4444; border-right: 3px solid #ff4444;{% endif %}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem;">
+            <a href="#" style="color: var(--text-dim);"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: var(--text-dim);"><i class="fab fa-telegram"></i></a>
+            <a href="#" style="color: var(--text-dim);"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--text-dim);"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2025 NETIX | تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

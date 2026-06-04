@@ -1,0 +1,433 @@
+/* ========== فونت‌ها ========== */
+        @font-face {
+            font-family: "sahel";
+            src: url("./font/Sahel.ttf") format("openType");
+        }
+        @font-face {
+            font-family: "sahel_bold";
+            src: url("./font/Sahel-Bold.ttf") format("openType");
+        }
+        @font-face {
+            font-family: "sahel_black";
+            src: url("./font/Sahel-Black.ttf") format("openType");
+        }
+
+        /* ========== متغیرهای رنگی ========== */
+        :root {
+            --bg-dark: #0A0E17;
+            --bg-darker: #111622;
+            --card-bg-dark: rgba(20, 28, 40, 0.7);
+            --text-dark: #F1F5F9;
+            --text-dim-dark: #94A3B8;
+            --accent-blue: #3B82F6;
+            --accent-cyan: #06B6D4;
+            
+            --bg-light: #F8FAFC;
+            --bg-darker-light: #E2E8F0;
+            --card-bg-light: rgba(255, 255, 255, 0.8);
+            --text-light: #0F172A;
+            --text-dim-light: #475569;
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--bg-light);
+            --bg-darker: var(--bg-darker-light);
+            --card-bg: var(--card-bg-light);
+            --text-main: var(--text-light);
+            --text-dim: var(--text-dim-light);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--bg-dark);
+            --bg-darker: var(--bg-darker);
+            --card-bg: var(--card-bg-dark);
+            --text-main: var(--text-dark);
+            --text-dim: var(--text-dim-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "sahel", sans-serif;
+            background: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* ========== پس‌زمینه Canvas ========== */
+        #networkCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: block;
+        }
+
+        /* آیکون چرخان */
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            pointer-events: none;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .floating-icon i {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            opacity: 0.3;
+            animation: slowSpin 20s linear infinite;
+        }
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-icon {
+                width: 30px;
+                height: 30px;
+                bottom: 15px;
+                left: 15px;
+            }
+            .floating-icon i {
+                font-size: 0.9rem;
+                opacity: 0.2;
+            }
+        }
+
+        /* ========== هدر ========== */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1300px;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border-radius: 80px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo {
+            font-family: "sahel_black";
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-menu a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        .nav-menu a:hover { color: var(--accent-blue); }
+
+        .theme-toggle {
+            background: rgba(59, 130, 246, 0.2);
+            border: none;
+            color: var(--text-main);
+            font-size: 1rem;
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        /* ========== Hero ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1.5rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-block;
+            font-size: 1.05rem;
+        }
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 1.5px solid var(--accent-blue);
+            color: var(--accent-blue);
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* ========== بخش‌ها ========== */
+        section {
+            padding: 5rem 1.5rem;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title span {
+            color: var(--accent-blue);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-grid p:first-of-type {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            text-align: center;
+            flex: 1;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+        }
+        .stat-box div:last-child {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            transition: 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-blue);
+        }
+        .project-img {
+            height: 160px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-img i {
+            font-size: 3.5rem;
+            color: white;
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .project-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-info p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .contact-flex {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 2.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .contact-flex h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-flex p {
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--bg-color);
+            border: 1px solid var(--text-dim);
+            border-radius: 14px;
+            color: var(--text-main);
+            font-family: "sahel";
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .submit-btn {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-darker);
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+        footer a {
+            font-size: 1.2rem;
+        }
+
+        /* ========== موبایل ========== */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.9rem; }
+            .btn { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+            .about-grid, .contact-flex { grid-template-columns: 1fr; gap: 1.5rem; }
+            .section-title { font-size: 1.6rem; margin-bottom: 2rem; }
+            section { padding: 3rem 1rem; }
+            .stats { flex-direction: column; gap: 0.8rem; }
+            .stat-box { padding: 0.6rem; }
+            .stat-number { font-size: 1.3rem; }
+            .services-grid { gap: 1rem; }
+            .service-card { padding: 1.2rem; }
+            .service-card h3 { font-size: 1.1rem; }
+            .service-card i { font-size: 2rem; }
+            .projects-grid { gap: 1rem; }
+            .project-img { height: 120px; }
+            .project-img i { font-size: 2.5rem; }
+            .project-info { padding: 1rem; }
+            .project-info h3 { font-size: 1rem; }
+            header { top: 10px; width: 95%; }
+            .logo { font-size: 1.3rem; }
+            .nav-container { padding: 0.5rem 1rem; }
+            .theme-toggle { width: 32px; height: 32px; font-size: 0.8rem; }
+            .contact-flex { padding: 1.5rem; }
+            .contact-flex h3 { font-size: 1.2rem; }
+        }
+
+        /* ========== تبلت ========== */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2rem; }
+            .btn { font-size: 0.95rem; }
+        }
