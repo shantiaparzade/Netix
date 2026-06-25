@@ -1,0 +1,36 @@
+# ===== محیط مجازی =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== فایل‌های کش پایتون =====
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# ===== دیتابیس =====
+db.sqlite3
+*.sqlite3
+
+# ===== فایل‌های جنگو =====
+/media/
+/staticfiles/
+
+# ===== IDE (PyCharm) =====
+.idea/
+.vscode/
+*.iml
+
+# ===== متغیرهای محیطی =====
+.env
+*.env
+secrets.json
+
+# ===== فایل‌های سیستمعامل =====
+.DS_Store
+Thumbs.db
+
+# ===== فایل‌های لاگ =====
+*.log

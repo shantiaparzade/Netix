@@ -131,7 +131,7 @@
                             <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="ایمیل" required>
+                            <input type="email" name="email" placeholder="ایمیل">
                         </div>
                         <div class="form-group">
                             <input type="tel" name="phone" placeholder="شماره تماس" required>
@@ -150,20 +150,6 @@
                         <button type="submit" class="submit-btn">ارسال درخواست <i
                                 class="fas fa-paper-plane"></i></button>
                     </form>
-
-                    <!-- نمایش پیغام‌های موفقیت یا خطا -->
-                    {% if messages %}
-                    <div style="margin-top: 1rem;">
-                        {% for message in messages %}
-                        <div
-                            style="padding: 0.8rem; border-radius: 8px; margin-bottom: 0.5rem;
-                        {% if message.tags == 'success' %}background-color: rgba(57, 255, 20, 0.2); color: #39FF14; border-right: 3px solid #39FF14;
-                        {% else %}background-color: rgba(255, 30, 30, 0.2); color: #ff4444; border-right: 3px solid #ff4444;{% endif %}">
-                            {{ message }}
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
                 </div>
             </div>
         </section>

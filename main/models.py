@@ -1,11 +1,10 @@
 from django.db import models
 
-
 class Contact(models.Model):
     REQUEST_TYPES = [
-        ('مشاوره رایگان', 'مشاوره رایگان'),
-        ('درخواست پروژه', 'درخواست پروژه'),
-        ('سایر موارد', 'سایر موارد'),
+        ('free_consultation', 'مشاوره رایگان'),
+        ('project_request', 'درخواست پروژه'),
+        ('other', 'سایر موارد'),
     ]
 
     name = models.CharField(max_length=100)
