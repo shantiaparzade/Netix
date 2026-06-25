@@ -101,11 +101,28 @@
         </section>
 
         <section id="projects">
-            <div class="container">
-                <h2 class="section-title"><span>پروژه‌های</span> اخیر</h2>
-                <div class="projects-grid" id="projectsGrid"></div>
-            </div>
-        </section>
+    <div class="container">
+        <h2 class="section-title"><span>پروژه‌های</span> اخیر</h2>
+        <div class="projects-grid">
+            {% for project in projects %}
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.desc }}</p>
+                        <div style="display:flex; gap:0.5rem; margin-top:1rem; flex-wrap:wrap;">
+                            {% for tag in project.tags %}
+                                <span style="background:rgba(59,130,246,0.15); padding:0.2rem 0.8rem; border-radius:50px; font-size:0.7rem;">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
         <section id="contact">
             <div class="container">
